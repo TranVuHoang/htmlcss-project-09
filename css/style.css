@@ -249,6 +249,7 @@ header {
 .menu-section {
   color: var(--white-color);
   background: var(--dark-color);
+  padding: 50px 0 100px;
 }
 
 .menu-section .menu-list {
@@ -268,7 +269,35 @@ header {
   width: calc(100% / 3 - 110px);
 }
 
-/* Responsive media query code for max-width*/
+.menu-section .menu-list .menu-item .menu-image {
+  max-width: 83%;
+  aspect-ratio: 1;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.menu-section .menu-list .menu-item .name {
+  margin: 12px 0;
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-semibold);
+}
+
+.menu-section .menu-list .menu-item .desc {
+  font-size: var(--font-size-m);
+}
+
+/* Responsive media query code for max-width 1024px*/
+@media screen and (max-width: 1024px) {
+  .menu-section .menu-list {
+    gap: 60px;
+  }
+
+  .menu-section .menu-list .menu-item {
+    width: calc(100% / 3 - 60px);
+  }
+}
+
+/* Responsive media query code for max-width 900px */
 @media screen and (max-width: 900px) {
   :root {
     /* Font size */
@@ -277,7 +306,7 @@ header {
     --font-size-xl: 1.5rem;
     --font-size-xxl: 1.8rem;
   }
-  
+
   body.show-mobile-menu header::before {
     content: "";
     position: fixed;
@@ -364,5 +393,28 @@ header {
     height: 100%;
     max-width: 250px;
     aspect-ratio: 1; /* luôn đảm bảo chiều rộng và chiều cao bằng nhau */
+  }
+
+  .menu-section .menu-list {
+    gap: 30px;
+  }
+
+  .menu-section .menu-list .menu-item {
+    width: calc(100% / 2 - 30px);
+  }
+
+  .menu-section .menu-list .menu-image {
+    max-width: 200px;
+  }
+}
+
+/* Responsive media query code for max-width 640px */
+@media screen and (max-width: 640px) {
+  .menu-section .menu-list {
+    gap: 60px;
+  }
+
+  .menu-section .menu-list .menu-item {
+    width: 100%;
   }
 }
