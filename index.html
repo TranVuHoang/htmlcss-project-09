@@ -6,6 +6,12 @@
     <title>Coffee Website</title>
     <!-- Style CSS-->
     <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Font awesome for icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Header -->
@@ -18,6 +24,8 @@
 
         <!-- menu navbar -->
         <ul class="nav-menu">
+          <button id="menu-close-button" class="fas fa-times"></button>
+
           <li class="nav-item">
             <a href="#home" class="nav-link">Home</a>
           </li>
@@ -37,6 +45,7 @@
             <a href="#contact" class="nav-link">Contact</a>
           </li>
         </ul>
+        <button id="menu-open-button" class="fas fa-bars"></button>
       </nav>
     </header>
 
@@ -61,10 +70,16 @@
           </div>
 
           <div class="hero-image-wrapper">
-            <img src="./images/coffee-hero-section.png" alt="Best coffee" class="hero-img">
+            <img
+              src="./images/coffee-hero-section.png"
+              alt="Best coffee"
+              class="hero-img"
+            />
           </div>
         </div>
       </section>
     </main>
+
+    <script src="./js/main.js"></script>
   </body>
 </html>

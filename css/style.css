@@ -107,10 +107,14 @@ header {
   background: var(--secondary-color);
 }
 
+.navbar :where(#menu-close-button, #menu-open-button) {
+  display: none !important;
+}
+
 /*===== Hero section =====*/
 .hero-section {
-  background: var(--primary-color);
   min-height: 100vh;
+  background: var(--primary-color);
 }
 
 .hero-section .section-content {
@@ -182,10 +186,36 @@ header {
     --font-size-xl: 1.5rem;
     --font-size-xxl: 1.8rem;
   }
+  body.show-mobile-menu header::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar :where(#menu-close-button, #menu-open-button) {
+    font-size: var(--font-size-l);
+    display: block !important;
+  }
+
+  .navbar #menu-close-button {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+  }
+
+  .navbar #menu-open-button {
+    /* color: var(--white-color); */
+  }
+
   .navbar .nav-menu {
     display: block;
     position: fixed;
-    left: 0;
+    left: -300px;
     top: 0;
     width: 300px;
     background-color: var(--white-color);
@@ -193,6 +223,13 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 100px;
+    transition: left 0.2s ease;
+  }
+
+  /* add close menu buttons to show/hide mobile menu */
+  body.show-mobile-menu .navbar .nav-menu {
+    left: 0;
   }
 
   .navbar .nav-menu .nav-link {
@@ -200,5 +237,26 @@ header {
     font-size: var(--font-size-l);
     display: block;
     /* margin-top: 17px; */
+  }
+
+  .hero-section .section-content {
+    gap: 50px;
+    text-align: center;
+    justify-content: center;
+    padding: 30px 20px 20px;
+    flex-direction: column-reverse;
+  }
+
+  .hero-section .hero-image-wrapper {
+    max-width: 270px;
+    margin-right: 0;
+  }
+
+  .hero-section .hero-details :is(.subtitle, .desc) {
+    max-width: 100%;
+  }
+
+  .hero-section .hero-details .buttons {
+    justify-content: center;
   }
 }
