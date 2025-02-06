@@ -245,6 +245,29 @@ header {
   color: var(--secondary-color);
 }
 
+/* Menu section styling */
+.menu-section {
+  color: var(--white-color);
+  background: var(--dark-color);
+}
+
+.menu-section .menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 110px;
+  justify-content: space-between;
+}
+
+.menu-section .menu-list .menu-item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: calc(100% / 3 - 110px);
+}
+
 /* Responsive media query code for max-width*/
 @media screen and (max-width: 900px) {
   :root {
@@ -254,6 +277,7 @@ header {
     --font-size-xl: 1.5rem;
     --font-size-xxl: 1.8rem;
   }
+  
   body.show-mobile-menu header::before {
     content: "";
     position: fixed;
@@ -320,7 +344,8 @@ header {
     margin-right: 0;
   }
 
-  .hero-section .hero-details :is(.subtitle, .desc), .about-section .about-details {
+  .hero-section .hero-details :is(.subtitle, .desc),
+  .about-section .about-details {
     max-width: 100%;
   }
 
